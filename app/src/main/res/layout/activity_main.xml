@@ -8,14 +8,21 @@
     tools:context=".MainActivity">
 
     <LinearLayout
+        android:background="@color/purple"
+        android:id="@+id/linear_menu"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:paddingBottom="16dp"
+        android:paddingTop="16dp">
 
         <ImageView
+            app:tint="@color/white"
             android:layout_width="0dp"
             android:layout_height="40dp"
             android:layout_weight="1"
-            android:src="@drawable/baseline_accessibility_24" />
+            android:src="@drawable/baseline_add_reaction_24" />
 
         <ImageView
             android:layout_width="0dp"
@@ -28,20 +35,35 @@
             android:layout_height="40dp"
             android:layout_weight="1"
             android:src="@drawable/baseline_add_reaction_24" />
-
 
     </LinearLayout>
 
     <TextView
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linear_menu"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/cabin"
+        android:text="Ola kotlin" />
+
+    <TextView
+        android:textColor="@color/black"
+        android:textSize="22sp"
         android:id="@+id/text_phrase"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
+        android:fontFamily="@font/cabin"
         android:gravity="center"
         android:padding="16dp"
-        android:text="Motivation Motivation Motivation Motivation" />
+        android:text="@string/app_name" />
 
     <View
+        android:elevation="5dp"
+        android:backgroundTint="@color/dark_purple"
         android:layout_width="128dp"
         android:layout_height="5dp"
         android:layout_below="@id/text_phrase"
@@ -49,11 +71,14 @@
         android:background="@color/black" />
 
     <Button
+        android:id="@+id/button_new_frase"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="32dp"
-        android:text="Nova Frase" />
+        android:backgroundTint="@color/dark_purple"
+        android:fontFamily="@font/cabin"
+        android:text="NOVA FRASE" />
 
 </RelativeLayout>
