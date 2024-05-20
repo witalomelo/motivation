@@ -1,6 +1,8 @@
 package br.com.motivation
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
@@ -17,6 +19,9 @@ class UserActivity : AppCompatActivity(), View.OnClickListener {
         binding = ActivityUserBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        //escondendo a barra de navegação
+        supportActionBar?.hide()
+
         binding.buttonSave.setOnClickListener(this)
     }
 
@@ -29,6 +34,9 @@ class UserActivity : AppCompatActivity(), View.OnClickListener {
     private fun handleSave() {
         val name = binding.editName.text.toString()
         if (name != "") {
+
+            SecurityPreferences(this).storeString("USER_NAME", name) //salvando nome do usuario pelo metodo store
+
             //navegacao entre activities
             startActivity(Intent(this, MainActivity::class.java))
             finish() //encerrando activity

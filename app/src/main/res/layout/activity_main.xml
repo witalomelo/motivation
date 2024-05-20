@@ -39,6 +39,7 @@
     </LinearLayout>
 
     <TextView
+        android:id="@+id/text_user_name"
         android:textColor="@color/black"
         android:textSize="18sp"
         android:layout_width="wrap_content"
